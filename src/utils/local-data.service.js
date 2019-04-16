@@ -5,4 +5,8 @@ export class LocalDataService {
     exp.setTime(exp.getTime() + expire * 60 * 1000)
     document.cookie = name + '=' + escape(value) + ';expire=' + exp.toGMTString()
   }
+  // 移除cookie
+  static cookieRemove (name) {
+    this.cookieSet(name, '', -1)
+  }
 }

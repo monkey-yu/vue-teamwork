@@ -12,9 +12,19 @@ export default new Router({
       component: Login
     },
     {
-      path:'home',
-      name:'home',
-      component:Home
+      path: '',
+      component: Home,
+      children: [
+        {
+          path: '',
+          component: Home
+        },
+        {
+          path: 'home',
+          name: 'home',
+          component: Home
+        }
+      ]
     }
   ]
 })
