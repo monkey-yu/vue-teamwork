@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { UserInfoBusiness } from '../../business/user-info.service';
 import { BaseInfoService } from '../../business/base-info.service';
+import { DialogsService } from '../../utils/dialogs.service'
 @Component({
   props: ['url']
 })
@@ -29,6 +30,7 @@ export default class Login extends Vue {
       }
     }).catch(err =>{
       this.loading =false;
+      DialogsService.notify(err,'warning')
     })
 
   }
