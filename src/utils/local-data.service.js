@@ -9,4 +9,14 @@ export class LocalDataService {
   static cookieRemove (name) {
     this.cookieSet(name, '', -1)
   }
+  // 获取cookie
+  static cookieGet (name) {
+    const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+    const arr = document.cookie.match(reg)
+    if (arr && arr.length > 1) {
+      return unescape(arr[2])
+    } else {
+      return null
+    }
+  }
 }

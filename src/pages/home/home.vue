@@ -12,7 +12,7 @@
     <el-menu-item index="4">日历</el-menu-item>
     <el-menu-item index="5">通知</el-menu-item>
     <el-submenu index="6" tabPosition="right">
-      <template slot="title">用户名</template>
+      <template slot="title">{{userName}}</template>
       <el-menu-item index="6-1">账号设置</el-menu-item>
       <el-menu-item index="6-2" @click="logout">退出登录</el-menu-item>
     </el-submenu>
