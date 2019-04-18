@@ -12,7 +12,7 @@
         <span class="label-box">密码：</span>
         <input ref="password" id="tbPassword" @keyup.enter="login()" v-model="password" placeholder="请输入密码" :class="{'input-error': submitted && !password}" class="text-control" type="password" value="" />
       </div>
-      <div class="bottom-box"></div>
+      <div class="bottom-box">
         <button @click="login()" type="button" class="btn login-button">登录</button>
         <button @click="reset()" type="reset" class="btn login-button">重置</button>
       </div>
