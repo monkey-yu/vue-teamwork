@@ -2,7 +2,7 @@
   <div class="login-view">
     <div class="login-content">
       <div class="logo-box">
-        <span>欢迎来到 teamwork</span>
+        <span>欢迎来到 knowledgebase</span>
       </div>
       <div class="control-box">
         <span class="label-box">用户名：</span>
