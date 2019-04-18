@@ -2,7 +2,7 @@
   <div class="login-view">
     <div class="login-content">
       <div class="logo-box">
-        <span>欢迎来到 knowledgebase</span>
+        <span>欢迎来到 teamwork</span>
       </div>
       <div class="control-box">
         <span class="label-box">用户名：</span>
@@ -12,7 +12,7 @@
         <span class="label-box">密码：</span>
         <input ref="password" id="tbPassword" @keyup.enter="login()" v-model="password" placeholder="请输入密码" :class="{'input-error': submitted && !password}" class="text-control" type="password" value="" />
       </div>
-      <div class="bottom-box">
+      <div class="bottom-box"></div>
         <button @click="login()" type="button" class="btn login-button">登录</button>
         <button @click="reset()" type="reset" class="btn login-button">重置</button>
       </div>
