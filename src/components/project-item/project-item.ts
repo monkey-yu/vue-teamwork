@@ -10,7 +10,6 @@ export default class ProjectItem extends Vue{
   allProjects : Array<any> = []
   created() {
     this.$watch('showProjects',(newValue,oldValue) => {
-      console.log('haha',newValue,oldValue)
       this.allProjects = newValue
     })
   }

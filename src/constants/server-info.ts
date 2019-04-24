@@ -1,3 +1,3 @@
-export class SERVERINFO{
-  serverIP: ''
+export class SERVERINFO {
+  serverIP: '';
 }

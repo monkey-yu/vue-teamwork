@@ -13,7 +13,6 @@ export default class Navigator extends Vue{
     this.userName = user.loginName
   }
   handleSelect(key,path){
-    console.log(key,path);
   }
   logout(){
     LocalDataService.cookieRemove('userInfo');
