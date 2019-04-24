@@ -1,0 +1,22 @@
+.project-item{
+  height:160px;
+  background-image: url(https://mailimg.teambition.com/logos/cover-media.jpg);
+  background-size: cover;
+  .project-item-setting{
+    float: right;
+    padding-right: 14px;
+    .el-button--text{
+      color: #FFF
+    }
+  }
+  .project-item-title{
+    padding-top: 40px;
+    padding-left: 30px;
+    color: #fff;
+    font-size: 16px;
+  }
+  &:hover{
+    cursor: pointer;
+    transform: translateY(-4px)
+  }
+}

@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
-@Component({})
+import SideMenu from '../../components/side-menu/side-menu.vue'
+import ProjectItem from '../../components/project-item/project-item.vue'
+@Component({
+  components: { SideMenu,ProjectItem }
+})
 export default class Index extends Vue{
-  handleOpen(key, keyPath) {
-    console.log(key, keyPath);
-  }
-  handleClose(key, keyPath) {
-    console.log(key, keyPath);
-  }
+
 }
