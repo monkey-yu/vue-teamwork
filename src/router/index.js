@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/pages/login/login.vue'
 import Home from '@/pages/home/home.vue'
-import Index from '@/pages/index/index.vue'
+import Organization from '@/pages/organization/organization.vue'
+import Project from '@/pages/project/project.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -19,13 +20,23 @@ export default new Router({
       children: [
         {
           path: '',
-          component: Index
-        },
-        {
-          path: 'index',
-          name: 'index',
-          component: Index
+          component: Organization,
+          children: [
+            {
+              path: '',
+              component: Project
+            },
+            {
+              path: 'project',
+              name: 'project',
+              query: {
+                toshow: String
+              },
+              component: Project
+            }
+          ]
         }
+
       ]
     }
   ]

@@ -13,10 +13,6 @@ export default class Login extends Vue {
   password: string = '';
   url: string;
   submitted: boolean = false;
-
-  created() {
-  }
-
   login() {
     this.submitted = true;
     this.loading = true;
@@ -24,7 +20,7 @@ export default class Login extends Vue {
       BaseInfoService.setUser(data);
       this.loading = false;
       if(!this.$route.params.url) {
-        this.$router.push({name: 'index'});
+        this.$router.push({name: 'project',query:{toshow:'all'}});
       }else{
         window.location.href = decodeURIComponent(this.$route.params.url);
       }
