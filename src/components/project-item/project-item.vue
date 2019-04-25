@@ -38,15 +38,13 @@
         <el-input v-model="item.projectAuthor" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="项目分组" :label-width="formLabelWidth" class="project-form-input">
-        <el-select v-model="item.projectGroup" placeholder="请选择分组">
-          <el-option label="技术" value="技术"></el-option>
-          <el-option label="生活" value="生活"></el-option>
+        <el-select v-model="item.projectGroup" placeholder="请选择">
+          <el-option v-for="item in groupOptions" :label="item.label" :value="item.value"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="项目公开性" :label-width="formLabelWidth" class="project-form-input">
         <el-select v-model="item.isPublic" placeholder="请选择项目公开性">
-          <el-option label="公开项目" value="true"></el-option>
-          <el-option label="私有项目" value="false"></el-option>
+          <el-option v-for="item in publicOptions" :label="item.label" :value="item.value"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
