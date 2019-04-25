@@ -1,7 +1,13 @@
 <template>
   <el-col :span="20">
     <div class="content-container">
-      <h3 class="title">星标项目</h3>
+      <h3 class="title">
+        <span v-if="show === 'star'"> 星标项目</span>
+        <span v-else-if="show === 'ungrouped'"> 未分组项目</span>
+        <span v-else-if="show === 'archive'"> 已归档项目</span>
+        <span v-else-if="show === 'myself'"> 我参与的 · {{receiveProjects.length}}</span>
+        <span v-else> 全部项目 · {{receiveProjects.length}}</span>
+     </h3>
       <el-row>
         <el-col :span="6" v-for="(item,index) in receiveProjects" style="margin:15px">
         <el-card class="project-item">

@@ -11,6 +11,7 @@ import {ProjectBusiness} from '../../business/project-business.service'
 export default class Project extends Vue {
   projects: Array<any> = [];
   showProjects: Array<any> = [];
+  showFlag: string = 'all';
   loading: boolean = false;
   created() {
     this.bindList()
@@ -25,6 +26,7 @@ export default class Project extends Vue {
   }
   @Watch('param')
   watchCount(newVal, oldVal) {
+    this.showFlag = newVal;
     if (newVal === 'star'){
       this.showProjects = [];
       this.projects.forEach(item =>{
