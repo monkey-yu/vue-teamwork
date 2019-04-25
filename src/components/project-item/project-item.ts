@@ -2,15 +2,15 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 @Component({
   props:{
-    showProjects:Array,
+    showProjects: Array,
 
   }
 })
 export default class ProjectItem extends Vue{
-  allProjects : Array<any> = []
+  receiveProjects : Array<any> = []
   created() {
     this.$watch('showProjects',(newValue,oldValue) => {
-      this.allProjects = newValue
+      this.receiveProjects = newValue
     })
   }
 }

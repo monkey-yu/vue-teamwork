@@ -30,7 +30,7 @@ export default new Router({
               path: 'project',
               name: 'project',
               query: {
-                toshow: String
+                show: String
               },
               component: Project
             }

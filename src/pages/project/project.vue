@@ -1,6 +1,6 @@
 <template>
   <div>
-    <project-item :showProjects="showProjectsArr"></project-item>
+    <project-item :showProjects="showProjects"></project-item>
   </div>
 </template>
 <script lang="ts" src="./project.ts"></script>
