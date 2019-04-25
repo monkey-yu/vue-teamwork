@@ -1,5 +1,5 @@
 export class HttpOptions {
-  constructor( url = null, body = null, headers = null ){
+  constructor (url = null, body = null, headers = null) {
     this.url = url
     this.body = body
     this.params = null
@@ -11,7 +11,7 @@ export class HttpOptions {
 };
 
 export class HttpHeader {
-  constructor( name, value ){
+  constructor (name, value) {
     this.name = name
     this.value = value
   }
