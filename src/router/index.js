@@ -4,6 +4,7 @@ import Login from '@/pages/login/login.vue'
 import Home from '@/pages/home/home.vue'
 import Organization from '@/pages/organization/organization.vue'
 import Project from '@/pages/project/project.vue'
+import NotFound from '@/pages/not-found/not-found.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -38,6 +39,17 @@ export default new Router({
         }
 
       ]
+    },
+    {
+      path: '404',
+      name: 'notfound',
+      component: NotFound
+    },
+    {
+      path: '*',
+      redirect: {
+        name: 'notfound'
+      }
     }
   ]
 })
