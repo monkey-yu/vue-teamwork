@@ -4,13 +4,13 @@ import { LocalDataService } from '../../utils/local-data.service';
 import { DialogsService } from '../../utils/dialogs.service';
 import { BaseInfoService } from '../../business/base-info.service';
 @Component({})
-export default class Navigator extends Vue{
-  activeIndex:string = '1';
-  userName:string = '';
+export default class HomeHeader extends Vue{
+  userName: string = '';
+  inputSearch: string = '';
   mounted() {
     let user;
     user = BaseInfoService.getUser();
-    this.userName = user.loginName
+    this.userName = user.loginName;
   }
   handleSelect(key,path){
   }

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import Navigator from '../../components/navigator/navigator.vue'
+import HomeHeader from '../../components/home-header/home-header.vue'
 @Component({
-  components: { Navigator }
+  components: { HomeHeader }
 })
 export default class Home extends Vue{
 
