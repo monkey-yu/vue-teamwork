@@ -27,7 +27,9 @@
         </el-submenu>
       </el-menu>
     </el-col>
-    <router-view :param="queryParam"></router-view>
+    <el-col :span="20">
+      <project-item :showProjects="showProjects" :showFlag="showFlag"></project-item>
+    </el-col>
   </div>
 </template>
 <script lang="ts" src="./organization.ts"></script>

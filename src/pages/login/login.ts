@@ -20,7 +20,7 @@ export default class Login extends Vue {
       BaseInfoService.setUser(data);
       this.loading = false;
       if(!this.$route.params.url) {
-        this.$router.push({name: 'project',query:{show:'all'}});
+        this.$router.push({name: 'organization'});
       }else{
         window.location.href = decodeURIComponent(this.$route.params.url);
       }
