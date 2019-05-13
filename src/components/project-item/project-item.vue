@@ -30,6 +30,7 @@
     :visible.sync="dialogVisible"
     width="60%"
     center>
+
       <el-form :model="item" label-position="top" :inline="true" >
       <el-form-item label="项目名称" :label-width="formLabelWidth" class="project-form-input">
         <el-input v-model="item.projectName" autocomplete="off"></el-input>

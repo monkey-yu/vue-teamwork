@@ -7,7 +7,16 @@
       </li>
       <li class="home-header-list">我的</li>
       <li class="home-header-list">日历</li>
-      <li class="home-header-list">通知</li>
+      <li class="home-header-list">
+        <el-tooltip class="item" effect="dark" content="通知" placement="bottom">
+          <i class="el-icon-bell"></i>
+        </el-tooltip>
+      </li>
+      <li class="home-header-list">
+        <el-tooltip class="item" effect="dark" content="私信" placement="bottom">
+          <i class="el-icon-message"></i>
+        </el-tooltip>
+      </li>
       <li class="home-header-list">
         <el-dropdown>
           <span class="el-dropdown-link">
