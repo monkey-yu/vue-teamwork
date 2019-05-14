@@ -12,7 +12,7 @@ const config = [
   {
     serverIP: 'https://production.cn'
   }
-]
+];
 export const SERVERINFO = {
   serverIP: config[env].serverIP
-}
+};

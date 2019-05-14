@@ -9,7 +9,7 @@
         <span v-else> 全部项目 · {{receiveProjects.length}}</span>
       </h3>
       <el-row>
-        <el-col :span="6" v-for="(item,index) in receiveProjects" :key="item.projectId" style="margin:15px">
+        <el-col :span="6" v-for="(item,index) in receiveProjects" :key="index" style="margin:15px">
         <el-card class="project-item">
           <div class="project-item-setting">
             <el-button type="text" class="button"><i class="el-icon-setting" @click="setting(item)"></i></el-button>
@@ -37,12 +37,12 @@
       </el-form-item>
       <el-form-item label="项目分组" :label-width="formLabelWidth" class="project-form-input">
         <el-select v-model="item.projectGroup" placeholder="请选择">
-          <el-option v-for="item in groupOptions" :label="item.label" :value="item.value"></el-option>
+          <el-option v-for="item in groupOptions" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="项目公开性" :label-width="formLabelWidth" class="project-form-input">
         <el-select v-model="item.isPublic" placeholder="请选择项目公开性">
-          <el-option v-for="item in publicOptions" :label="item.label" :value="item.value"></el-option>
+          <el-option v-for="item in publicOptions" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
       </el-form-item>
     </el-form>

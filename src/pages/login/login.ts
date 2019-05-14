@@ -3,15 +3,11 @@ import Component from 'vue-class-component';
 import { UserInfoBusiness } from '../../business/user-info.service';
 import { BaseInfoService } from '../../business/base-info.service';
 import { DialogsService } from '../../utils';
-@Component({
-  props: ['url']
-})
-
+@Component({})
 export default class Login extends Vue {
-  loading = false;
+  loading: boolean = false;
   userName: string = '';
   password: string = '';
-  url: string;
   submitted: boolean = false;
   login() {
     this.submitted = true;
@@ -28,7 +24,6 @@ export default class Login extends Vue {
       this.loading =false;
       DialogsService.notify(err,'warning')
     })
-
   }
 
   reset() {
