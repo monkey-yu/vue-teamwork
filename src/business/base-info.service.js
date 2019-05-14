@@ -1,6 +1,5 @@
-import { LocalDataService } from '../utils/local-data.service';
+import { LocalDataService } from '../utils'
 export class BaseInfoService {
-
   static setUser (userData) {
     const userInfo = {
       fullName: userData.fullName,
@@ -24,8 +23,7 @@ export class BaseInfoService {
         userInfo.expire = (new Date().valueOf() + 60 * 60 * 1000)
         LocalDataService.cookieSet('userInfo', JSON.stringify(userInfo))
       }
-    }
-    catch (ex) { }
+    } catch (ex) { }
     return userInfo
   }
 }

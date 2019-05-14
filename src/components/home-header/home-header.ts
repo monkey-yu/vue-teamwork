@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { LocalDataService } from '../../utils/local-data.service';
-import { DialogsService } from '../../utils/dialogs.service';
+import { LocalDataService, DialogsService } from '../../utils';
 import { BaseInfoService } from '../../business/base-info.service';
 @Component({})
 export default class HomeHeader extends Vue{

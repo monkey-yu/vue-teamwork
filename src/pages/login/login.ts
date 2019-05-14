@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { UserInfoBusiness } from '../../business/user-info.service';
 import { BaseInfoService } from '../../business/base-info.service';
-import { DialogsService } from '../../utils/dialogs.service'
+import { DialogsService } from '../../utils';
 @Component({
   props: ['url']
 })

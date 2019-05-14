@@ -1,20 +1,38 @@
 import axios from 'axios'
 import { MockUrl } from './mock-url'
-import { SERVERINFO } from '../../constants/server-info'
+import { SERVERINFO } from '../../constants/app-info-detail'
 export class HttpRequestService {
   constructor () {
     this._redirected = false
   }
-  static post (params) {
-    // 取mock数据
-    MockUrl.mockData(params)
-    // 依然发起http请求
-    return this.apiAxios('GET', params.url, params)
-  }
   static get (params) {
-    MockUrl.mockData(params)
+    if (!SERVERINFO.serverIP) {
+      MockUrl.mockData(params)
+      return this.apiAxios('GET', params.url, params)
+    }
     return this.apiAxios('GET', params.url, params)
-  }
+  };
+  static post (params) {
+    if (!SERVERINFO.serverIP) {
+      MockUrl.mockData(params)
+      return this.apiAxios('GET', params.url, params)
+    }
+    return this.apiAxios('POST', params.url, params)
+  };
+  static put (params) {
+    if (!SERVERINFO.serverIP) {
+      MockUrl.mockData(params)
+      return this.apiAxios('GET', params.url, params)
+    }
+    return this.apiAxios('PUT', params.url, params)
+  };
+  static delete (params) {
+    if (!SERVERINFO.serverIP) {
+      MockUrl.mockData(params)
+      return this.apiAxios('GET', params.url, params)
+    }
+    return this.apiAxios('DELETE', params.url, params)
+  };
 
   static apiAxios (method, url, params) {
     let headers = {}
@@ -24,9 +42,9 @@ export class HttpRequestService {
       })
     }
     const promise = new Promise(function (resolve, reject) {
-      // if(params){
-      //   params = filterNull(params);
-      // }
+      if (params) {
+        params = filterNull(params)
+      }
       axios({
         method: method,
         baseURL: SERVERINFO.serverIP,
@@ -34,7 +52,7 @@ export class HttpRequestService {
         data: method === 'POST' || method === 'PUT' ? params.body : null,
         params: method === 'GET' || method === 'DELETE' ? params.params : null,
         withCredentials: false,
-        headers: headers
+        headers: params.headers
       }).then((res) => {
         if (res.status === 200) {
           resolve(res.data)
@@ -48,8 +66,30 @@ export class HttpRequestService {
       })
     })
     return promise
+
     function resolveError (err) {
       console.log('err as follows:' + err)
+    }
+    function filterNull (o) {
+      for (const key in o) {
+        if (o[key] === null) {
+          delete o[key]
+        }
+        if (toType(o[key]) === 'string') {
+          o[key] = o[key].trim()
+        } else if (toType(o[key]) === 'object') {
+          o[key] = filterNull(o[key])
+        } else if (toType(o[key]) === 'array') {
+          o[key] = filterNull(o[key])
+        }
+      }
+      return o
+    }
+    function toType (obj) {
+      return {}.toString
+        .call(obj)
+        .match(/\s([a-zA-Z]+)/)[1]
+        .toLowerCase()
     }
   }
 }
