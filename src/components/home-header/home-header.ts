@@ -13,9 +13,20 @@ export default class HomeHeader extends Vue{
   }
   handleSelect(key,path){
   }
-  logout(){
+  handleCommand (command) {
+    if(command === 'logout'){
+      this.logout();
+    }else {
+      this.setting();
+    }
+  }
+  logout () {
     LocalDataService.cookieRemove('userInfo');
     this.$router.push('/');
     DialogsService.notify('退出成功','success')
   }
+  setting () {
+
+  }
+
 }

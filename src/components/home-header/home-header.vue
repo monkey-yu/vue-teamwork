@@ -18,14 +18,14 @@
         </el-tooltip>
       </li>
       <li class="home-header-list">
-        <el-dropdown>
+        <el-dropdown @command="handleCommand">
           <span class="el-dropdown-link">
             {{userName}}
             <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>账号设置</el-dropdown-item>
-            <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
+          <el-dropdown-menu slot="dropdown" >
+            <el-dropdown-item command="setting">账号设置</el-dropdown-item>
+            <el-dropdown-item command="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </li>
