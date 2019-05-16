@@ -10,12 +10,12 @@
       </h3>
       <el-row>
         <el-col :span="6" v-for="(item,index) in receiveProjects" :key="index" style="margin:15px">
-        <el-card class="project-item">
+        <el-card class="project-item" >
           <div class="project-item-setting">
             <el-button type="text" class="button"><i class="el-icon-setting" @click="setting(item)"></i></el-button>
             <el-button type="text" class="button"><i :class="[item.isStar ? 'el-icon-star-on' :'el-icon-star-off']" @click="item.isStar = !item.isStar"></i></el-button>
           </div>
-          <div class="project-item-title">
+          <div class="project-item-title" @click="toProject(item.projectId)">
             {{item.projectName}} <br>
             <span class="project-item-group"> {{item.projectGroup}} </span>
           </div>

@@ -4,6 +4,7 @@ import Login from '@/pages/login/login.vue'
 import Home from '@/pages/home/home.vue'
 import Organization from '@/pages/organization/organization.vue'
 import NotFound from '@/pages/not-found/not-found.vue'
+import ProjectRouter from './project-router.js'
 Vue.use(Router)
 
 export default new Router({
@@ -22,8 +23,8 @@ export default new Router({
           path: 'organization',
           name: 'organization',
           component: Organization
-        }
-
+        },
+        ...ProjectRouter
       ]
     },
     {

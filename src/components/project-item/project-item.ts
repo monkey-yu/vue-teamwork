@@ -36,7 +36,7 @@ export default class ProjectItem extends Vue{
     }
   ];
   formLabelWidth: string = '80px'
-  created() {
+  created () {
     this.$watch('showProjects',(newValue,oldValue) => {
       this.receiveProjects = newValue
     })
@@ -44,9 +44,11 @@ export default class ProjectItem extends Vue{
       this.show = newValue
     })
   }
-  setting(val){
+  setting (val) {
     this.item = val;
     this.dialogVisible =true;
-
+  }
+  toProject (projectId) {
+    this.$router.push({path:`project/${projectId}/task`});
   }
 }

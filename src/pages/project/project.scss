@@ -1,0 +1,7 @@
+@import '../../styles/colors.scss';
+.project-menu {
+  color: $mainColor;
+  .el-tabs__item {
+    color: $mainColor;
+  }
+}
