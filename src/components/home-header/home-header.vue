@@ -1,6 +1,6 @@
 <template>
   <div class="home-header-wrapper">
-    <h1 class="home-header-logo">TeamWork</h1>
+    <router-link class="home-header-logo" to="/organization">TeamWork</router-link>
     <ul class="home-header-group">
       <li class="home-header-list">
         <el-input class="home-header-search" v-model="inputSearch" placeholder="search"></el-input>
