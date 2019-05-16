@@ -1,0 +1,9 @@
+@import '../../styles/colors.scss';
+
+.task-item-wrapper {
+  margin: 24px auto 0;
+  padding: 0 24px 16px;
+  min-width: 948px;
+  max-width: 1048px;
+  background: $white;
+}
