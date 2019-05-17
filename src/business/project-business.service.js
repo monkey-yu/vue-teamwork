@@ -6,7 +6,10 @@ export class ProjectBusiness extends EntityBaseService {
     super('api/project/')
   }
 
-  static getList () {
-    return superClass.getList()
+  static getList (condition) {
+    return superClass.getData(condition)
+  }
+  static getTask (condition) {
+    return superClass.getData(condition)
   }
 }

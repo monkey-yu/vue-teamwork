@@ -7,6 +7,10 @@ export class MockUrl {
     }
     if (params.url.indexOf('api/project/list') > -1) {
       params.url = composeUrl('project-list.json')
+      return
+    }
+    if (params.url.indexOf('api/project/task') > -1) {
+      params.url = composeUrl('project-task.json')
     }
     function composeUrl (url) {
       return pre + url + '?date=' + new Date().getTime()

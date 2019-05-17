@@ -16,7 +16,9 @@ export default class Organization extends Vue{
   }
   getProjects(){
     this.loading = true;
-    ProjectBusiness.getList().then(res => {
+    ProjectBusiness.getList({
+      apiName: 'list'
+    }).then(res => {
       this.projects = res.data;
       this.showProjects = res.data;
       this.loading = false
