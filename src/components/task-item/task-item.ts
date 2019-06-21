@@ -9,9 +9,9 @@ export default class TaskItem extends Vue {
     this.getTasks()
   }
   getTasks () {
-    ProjectBusiness.getTask({
+    ProjectBusiness.getList({
       apiName: 'task'
-    }).then( res => {
+    }).then(res => {
       console.log('res',res);
       this.tasksCount = res.count;
       this.tasksData =res.data;

@@ -7,6 +7,7 @@ export class HttpRequestService {
   }
   static get (params) {
     if (!SERVERINFO.serverIP) {
+      console.log('params', params)
       MockUrl.mockData(params)
       return this.apiAxios('GET', params.url, params)
     }

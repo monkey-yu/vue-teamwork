@@ -9,7 +9,4 @@ export class ProjectBusiness extends EntityBaseService {
   static getList (condition) {
     return superClass.getData(condition)
   }
-  static getTask (condition) {
-    return superClass.getData(condition)
-  }
 }

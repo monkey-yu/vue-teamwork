@@ -45,7 +45,7 @@
             <span slot="title">待认领的任务</span>
           </el-menu-item>
           <el-menu-item index="5">
-            <i class="el-icon-s-custom"></i>
+            <i class="el-icon-user"></i>
             <span slot="title">我执行的任务</span>
           </el-menu-item>
         </el-menu>
