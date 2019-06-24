@@ -4,10 +4,9 @@ export class EntityBaseService {
   constructor (_restapibase) {
     this.restapibase = _restapibase
   }
-  getData (condition) {
+  getData (apiName) {
     const options = new HttpOptions()
-    options.url = this.restapibase + condition.apiName
-    options.params = condition.params
+    options.url = this.restapibase + apiName
     return HttpRequestService.get(options)
   }
 }
